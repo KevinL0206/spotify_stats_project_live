@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Spotify Analytics</title>
+  {% load static %}
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+</head>
+
+<body>
+
+
+  <!-- Display the selected time frame -->
+  <h1>Your Top Tracks - <span class="timeframe">{{ timeframe }}</span></h1>
+
+  <hr>
+
+  <main>
+    <ol class="track-grid">
+        {% for item in top_tracks %}
+        <li>
+            <img src="{{ item.album_cover }}" alt="Album Cover">
+            <figcaption><strong>{{ item.track.name }}</strong> by {{ item.artist_name }}</figcaption>
+        </li>
+        {% endfor %}
+    </ol>
+</main>
+
+
+
+<section id="buttons" class="buttons"> 
+
+  <!-- Assign Buttons a Value -->
+  <button class="time-frame-button" data-time-frame="short_term">1 Month</button>
+  <button class="time-frame-button" data-time-frame="medium_term">6 Months</button>
+  <button class="time-frame-button" data-time-frame="long_term">All Time</button>
+
+  <button class="limit-frame-button" data-limit-frame=20>Top 20 Tracks</button>
+  <button class="limit-frame-button" data-limit-frame=50>Top 50 Tracks</button>
+
+  <button class="top-artists-button">Top Artists</button>
+
+  
+
+</section>
+
+</body>
+</html>
+
+
+<!-- Button Clicks -->
+<script>
+const spotifyCode = "{{ request.session.spotify_code|default:'' }}";
+document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
+  const buttons_time = document.querySelectorAll(".time-frame-button");
+  const buttons_limit = document.querySelectorAll(".limit-frame-button");  
+  const topArtistsButton = document.querySelector(".top-artists-button");
+  
+
+  buttons_time.forEach((button) => {
+    button.addEventListener("click", (event) => {  // wait for a button to be pressed
+      const selectedTimeFrame = event.target.dataset.timeFrame; //retrieve timeframe allocated to button pressed
+      const currentUrl = new URL(window.location.href); 
+      currentUrl.searchParams.set("time_frame", selectedTimeFrame); //set url to selected time frame
+      window.location.href = currentUrl; //update page
+    }); 
+  });
+
+  buttons_limit.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const selectedLimitFrame = event.target.dataset.limitFrame; //retrieve limitframe allocated to button pressed
+        const currentUrl = new URL(window.location.href); 
+        currentUrl.searchParams.set("limit_frame", selectedLimitFrame); //set url to selected time frame
+        window.location.href = currentUrl; //update page
+      }); 
+    });
+
+
+
+  topArtistsButton.addEventListener("click", () => {
+    const topArtistUrl = `/top-artists`;
+    window.location.href = topArtistUrl;
+  });
+
+  
+
+});
+</script>
