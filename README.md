@@ -1,14 +1,14 @@
-Personal Spotify Analytics Web App
+**Personal Spotify Analytics Web App**
 
-Overview:
+**Overview:**
 This is a web application that provides personalized Spotify analytics to users. It utilizes the Django framework for the backend to access the Spotify API and retrieve user data. Python is used in Django views and for making API calls. The frontend is designed using HTML, CSS, and JavaScript for an intuitive user interface.
 
-Features:
+**Features:**
 
-Spotify Integration: Allows users to connect their Spotify account to the application to access their personal data.
+**Spotify Integration:** Allows users to connect their Spotify account to the application to access their personal data.
 
-Analytics Dashboard: Displays a user's listening history, including top tracks, artists, and genres.
+**Analytics Dashboard:** Displays a user's listening history, including top tracks, artists, and genres.
 
-Interactive UI: Utilizes CSS and JavaScript to create an engaging and user-friendly interface.
+**Interactive UI:** Utilizes CSS and JavaScript to create an engaging and user-friendly interface.
 
 The app is hoted using Vercel on: https://spotify-stats-project.vercel.app/
