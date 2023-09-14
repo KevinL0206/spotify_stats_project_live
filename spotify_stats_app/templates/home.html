@@ -48,7 +48,11 @@
 
     });
 
-    auth()
+    var client_id = '<%= client_id %>';
+    var client_secret = '<%= client_secret %>';
+    var redirect_uri = '<%= redirect_uri %>';
+
+    auth(client_id=client_id,client_secret=client_secret,redirect_uri=redirect_uri)
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token)
     

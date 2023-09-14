@@ -3,6 +3,11 @@ from decouple import config
 from spotify_stats_project import settings
 from urllib.parse import urlencode
 from django.urls import reverse
+import os
+
+client_id = os.environ.get('client_id')
+client_secret = os.environ.get('client_secret')
+redirect_uri = os.environ.get('redirect_uri')
 
 
 def start_page_redirect(request):
@@ -10,7 +15,7 @@ def start_page_redirect(request):
     return render(request,"start.html")
 
 def fail_view(request):
-    
+
     return render(request, 'fail.html')
 
 
