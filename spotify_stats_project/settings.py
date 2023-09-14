@@ -89,9 +89,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-]
+
 
 ROOT_URLCONF = "spotify_stats_project.urls"
 
