@@ -39,6 +39,15 @@
 
 <!-- Button Clicks -->
 <script>
+
+    const client_id = "{{client_id}}";
+    const client_secret = "{{client_secret}}";
+    const redirect_uri = "{{redirect_uri}}";
+
+    auth(client_id,client_secret,redirect_uri)
+
+
+
     document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
     const topArtistsButton = document.querySelector(".top-tracks-button");
     topArtistsButton.addEventListener("click", () => {
@@ -48,11 +57,8 @@
 
     });
 
-    const client_id = "{{client_id }}";
-    const client_secret = "{{client_secret }}";
-    const redirect_uri = "{{redirect_uri}}";
+    
 
-    auth(client_id,client_secret,redirect_uri)
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token)
     
