@@ -10,6 +10,7 @@ def start_page_redirect(request):
     return render(request,"start.html")
 
 def fail_view(request):
+    
     return render(request, 'fail.html')
 
 
