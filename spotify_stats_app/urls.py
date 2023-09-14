@@ -23,14 +23,12 @@ urlpatterns = [
 
     
     path('', views.start_page_redirect, name='start-page'),
-    path("spotify-auth/", views.spotify_auth, name="spotify-auth"),
     path('fail/', views.fail_view, name='fail'),
 
     path("spotify-callback/", views.spotify_callback, name="spotify-callback"),
 
     path("top-tracks/", views.top_track, name="top-tracks"),
     path("top-artists/", views.top_artist, name="top-artists"),
-    path("accounts/login/", views.start_page_redirect, name="login"),
     
 ]
 

@@ -1,0 +1,76 @@
+
+  h1{
+    color: white;
+    font-size: 65px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 35px;
+    margin:2%
+  }
+
+
+  body{
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    
+  }
+
+  hr{
+    width: 33%;
+    text-align: left;
+  }
+
+  main{
+    width: 80%;
+    margin: auto;
+  }
+
+  ol.track-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); 
+      gap: 50px;
+      column-gap: 100px;
+      list-style-type: none;
+      padding: 10px;
+      padding-bottom: 30px;
+      margin: 1%;
+  }
+
+  ol.track-grid li {
+      border: 3px solid gray;
+      padding: 5px;
+      text-align: center;
+      color: white;
+  }
+
+  ol.track-grid img {
+      
+      max-width: 170px;
+      height: 170px;
+  }
+
+  button{
+    background-color: #1DB954;
+    color: white;
+    padding: 25px;
+    width: 200px;
+    border: none;
+    margin-right: 20px;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  button:hover{
+    background-color: #1c8d43;
+    transition: 0.15s;
+  }
+
+  section.buttons{
+    background-color: #1DB954;
+    padding-left: 35px;
+    display: flex;
+    position: sticky;
+    bottom: 0px;
+  }

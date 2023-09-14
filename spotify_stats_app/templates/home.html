@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  {% load static %}
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+  <script src="{% static 'js/api.js' %}"></script>
+</head>
+
+<body>
+
+
+  
+  <h1>Home Page</h1>
+
+  <hr>
+
+
+<section id="buttons" class="buttons"> 
+
+  <button class="top-tracks-button">Top Tracks</button>
+ 
+
+</section>
+
+</body>
+</html>
+
+
+<!-- Button Clicks -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
+    const topArtistsButton = document.querySelector(".top-tracks-button");
+    topArtistsButton.addEventListener("click", () => {
+    const topArtistUrl = `/top-tracks`; 
+    window.location.href = topArtistUrl; // Redirect to the new URL
+        });
+
+    });
+
+    auth()
+    access_token = localStorage.getItem('access_token');
+    console.log("Access:",access_token)
+    
+
+</script>

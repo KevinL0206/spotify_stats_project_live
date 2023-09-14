@@ -23,6 +23,8 @@ SPOTIPY_CLIENT_ID = config('SPOTIPY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = config('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_REDIRECT_URI = config('SPOTIPY_REDIRECT_URI')
 
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -52,7 +54,7 @@ SECRET_KEY = "django-insecure-@)lgrsqjgouve*p)avz^c#m0dsnr0%-d0ztg46y6tzc6ed953n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = [".vercel.app","127.0.0.1","localhost"]
 
 
 
