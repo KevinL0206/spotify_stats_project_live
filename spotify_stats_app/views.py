@@ -5,14 +5,18 @@ from urllib.parse import urlencode
 from django.urls import reverse
 import os
 
-client_id = os.environ.get('client_id')
-client_secret = os.environ.get('client_secret')
-redirect_uri = os.environ.get('redirect_uri')
+
 
 
 def start_page_redirect(request):
-    
-    return render(request,"start.html")
+
+    client_info={
+        "client_id" : os.environ.get('client_id'),
+        "client_secret" : os.environ.get('client_secret'),
+        "redirect_uri" : os.environ.get('redirect_uri'),
+    }
+
+    return render(request,"start.html",client_info)
 
 def fail_view(request):
 
