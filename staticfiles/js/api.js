@@ -1,16 +1,17 @@
 
-const client_id="b85f009d17db40d79cf5251ad24e54ea"
-const client_secret="867b228e09d4490dac0d63e7bd41c58c"
-const redirect_uri="http://localhost:8000/spotify-callback"
+const client_id = process.env.client_id;
+const client_secret = process.env.client_secret;
+const redirect_uri = process.env.redirect_uri;
 
 function login() {
+    
     const authorizationParams = {
       response_type: 'code',
       client_id: client_id,
       scope: 'user-top-read',
       redirect_uri: redirect_uri
     };
-  
+    console.log(redirect_uri)
     const authorizationUrl = 'https://accounts.spotify.com/authorize?' + new URLSearchParams(authorizationParams).toString();
     // Redirect the browser to the authorization URL
 
