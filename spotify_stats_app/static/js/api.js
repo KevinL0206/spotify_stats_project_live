@@ -1,9 +1,5 @@
 
 
-client_id="b85f009d17db40d79cf5251ad24e54ea"
-client_secret="867b228e09d4490dac0d63e7bd41c58c"
-redirect_uri="https://spotify-stats-project.vercel.app/spotify-callback"
-
 
 function login() {
     const authorizationParams = {
