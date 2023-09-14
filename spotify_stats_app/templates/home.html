@@ -29,7 +29,8 @@
 <section id="buttons" class="buttons"> 
 
   <button class="top-tracks-button">Top Tracks</button>
- 
+  <button class="top-artists-button">Top Artists</button>
+    
 
 </section>
 
@@ -45,11 +46,22 @@
 
 
     document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
-    const topArtistsButton = document.querySelector(".top-tracks-button");
-    topArtistsButton.addEventListener("click", () => {
-    const topArtistUrl = `/top-tracks`; 
-    window.location.href = topArtistUrl; // Redirect to the new URL
+        const topArtistsButton = document.querySelector(".top-tracks-button");
+        const topTracksButton = document.querySelector(".top-tracks-button");
+
+        topTracksButton.addEventListener("click", () => {
+            const topTracksUrl = `/top-tracks`; 
+            window.location.href = topTracksUrl; // Redirect to the new URL
+
         });
+
+        topArtistsButton.addEventListener("click", () => {
+            const topArtistsUrl = `/top-artists`; 
+            window.location.href = topArtistsUrl; // Redirect to the new URL
+
+        });
+
+
 
     });
 
