@@ -10,7 +10,7 @@ function login() {
       scope: 'user-top-read',
       redirect_uri: redirect_uri
     };
-  
+    console.log(redirect_uri)
     const authorizationUrl = 'https://accounts.spotify.com/authorize?' + new URLSearchParams(authorizationParams).toString();
     // Redirect the browser to the authorization URL
 
