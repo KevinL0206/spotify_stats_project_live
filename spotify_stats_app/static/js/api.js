@@ -1,10 +1,7 @@
-//const client_id = process.env.client_id;
-//const client_secret = process.env.client_secret;
-//const redirect_uri = process.env.redirect_uri;
+const client_id = process.env.client_id;
+const client_secret = process.env.client_secret;
+const redirect_uri = process.env.redirect_uri;
 
-const client_id="b85f009d17db40d79cf5251ad24e54ea"
-const client_secret ="867b228e09d4490dac0d63e7bd41c58c"
-const redirect_uri="https://spotify-stats-project.vercel.app/spotify-callback"
 
 
 function login() {
