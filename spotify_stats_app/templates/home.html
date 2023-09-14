@@ -53,11 +53,11 @@
 
     });
 
-    const client_id = localStorage.getItem('client_id');
-    const client_secret = localStorage.getItem('client_secret');
-    const redirect_uri = localStorage.getItem('redirect_uri');
+    const clientid = "{{client_id }}";
+    const clientsecret = "{{client_secret }}";
+    const redirecturi = "{{redirect_uri}}";
 
-    auth(client_id,client_secret,redirect_uri)
+    auth(client_id=clientid,client_secret=clientsecret,redirect_uri=redirecturi)
 
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token)
