@@ -4,6 +4,7 @@ const client_secret = process.env.client_secret;
 const redirect_uri = process.env.redirect_uri;
 
 function login() {
+    
     const authorizationParams = {
       response_type: 'code',
       client_id: client_id,
