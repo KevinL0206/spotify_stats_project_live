@@ -1,7 +1,7 @@
 **Personal Spotify Analytics Web App**
 
 **Overview:**
-This is a web application that provides personalized Spotify analytics to users. It utilizes the Django framework for the backend to access the Spotify API and retrieve user data. Python is used in Django views and for making API calls. The frontend is designed using HTML, CSS, and JavaScript for an intuitive user interface.
+This is a web application that provides personalized Spotify analytics to users. It utilizes the Django framework for the backend to access the Spotify API and retrieve user data.  The frontend is designed using HTML, CSS, and JavaScript for an intuitive user interface.
 
 **Features:**
 
