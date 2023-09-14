@@ -8,7 +8,7 @@ function login() {
       response_type: 'code',
       client_id: client_id,
       scope: 'user-top-read',
-      redirect_uri: redirect_uri
+      redirect_uri: "https://spotify-stats-project.vercel.app/spotify-callback"
     };
   
     const authorizationUrl = 'https://accounts.spotify.com/authorize?' + new URLSearchParams(authorizationParams).toString();
