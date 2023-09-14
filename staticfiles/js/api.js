@@ -1,10 +1,10 @@
 
 
+
 function login() {
     const client_id = process.env.client_id;
     const client_secret = process.env.client_secret;
     const redirect_uri = process.env.redirect_uri;
-
 
     const authorizationParams = {
       response_type: 'code',
@@ -26,7 +26,6 @@ async function auth() {
     const client_id = process.env.client_id;
     const client_secret = process.env.client_secret;
     const redirect_uri = process.env.redirect_uri;
-
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
 
