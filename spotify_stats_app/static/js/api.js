@@ -1,8 +1,7 @@
+
 const client_id = process.env.client_id;
 const client_secret = process.env.client_secret;
-const redirect_uri = process.env.redirect_uri;
-
-
+const redirect_uri = "https://spotify-stats-project.vercel.app/spotify-callback";
 
 function login() {
     const authorizationParams = {
