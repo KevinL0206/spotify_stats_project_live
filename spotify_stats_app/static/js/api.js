@@ -1,7 +1,7 @@
 
 const client_id="b85f009d17db40d79cf5251ad24e54ea"
 const client_secret="867b228e09d4490dac0d63e7bd41c58c"
-const redirect_uri="http://localhost:8000/spotify-callback"
+const redirect_uri="https://spotify-stats-project.vercel.app/spotify-callback"
 
 function login() {
     const authorizationParams = {
