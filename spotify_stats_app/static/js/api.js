@@ -6,9 +6,7 @@ const redirect_uri = process.env.redirect_uri;
 function login() {
     const authorizationParams = {
       response_type: 'code',
-      client_id: client_id,
-      scope: 'user-top-read',
-      
+     
     };
     console.log(redirect_uri)
     const authorizationUrl = 'https://accounts.spotify.com/authorize?' + new URLSearchParams(authorizationParams).toString();
