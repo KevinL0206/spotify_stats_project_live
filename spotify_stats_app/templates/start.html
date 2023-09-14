@@ -30,7 +30,13 @@
 <script>
 
     const client_id = "{{client_id }}";
+    const client_secret = "{{client_secret}}";
     const redirect_uri = "{{redirect_uri}}";
+    
+    localStorage.setItem('client_id', client_id);
+    localStorage.setItem('client_secret', client_secret);
+    localStorage.setItem('redirect_uri', redirect_uri);
+
 
     login(client_id,redirect_uri)
 
