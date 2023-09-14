@@ -62,7 +62,7 @@ async function auth(client_id,client_secret,redirect_uri) {
 
   
         if (expires <= now) {
-            refreshSpotifyToken()
+            refreshSpotifyToken(client_id,client_secret)
         } 
       } else {    
         
@@ -73,7 +73,7 @@ async function auth(client_id,client_secret,redirect_uri) {
     }
 }
   
-async function refreshSpotifyToken() {
+async function refreshSpotifyToken(client_id,client_secret) {
     
     const tokenUrl =  "https://accounts.spotify.com/api/token"
 
@@ -97,12 +97,12 @@ async function refreshSpotifyToken() {
       });
   
       if (response.status === 200) {
-        const responseData = await response.json();
-        const access_token = responseData.access_token;
-        const token_type = responseData.token_type;
-        const scope = responseData.scope;
-        const expires_in = responseData.expires_in;
-        const newRefreshToken = responseData.refresh_token || refreshToken; // Refresh token may or may not be included
+        responseData = await response.json();
+        access_token = responseData.access_token;
+        token_type = responseData.token_type;
+        scope = responseData.scope;
+        expires_in = responseData.expires_in;
+        newRefreshToken = responseData.refresh_token || refreshToken; // Refresh token may or may not be included
   
         const now = new Date();
         const expires = new Date(now.getTime() + expires_in * 1000);
