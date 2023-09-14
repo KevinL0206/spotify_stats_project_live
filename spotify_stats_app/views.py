@@ -24,8 +24,14 @@ def fail_view(request):
 
 
 def spotify_callback(request):
+
+    client_info={
+        "client_id" : os.environ.get('client_id'),
+        "client_secret" : os.environ.get('client_secret'),
+        "redirect_uri" : os.environ.get('redirect_uri'),
+    }
    
-    return render(request, "home.html")
+    return render(request, "home.html",client_info)
     
      
 def top_track(request):
