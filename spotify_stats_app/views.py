@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect
 from decouple import config
 from spotify_stats_project import settings
@@ -30,3 +29,4 @@ def top_artist(request):
 
     return render(request, "top_artists.html")
         
+

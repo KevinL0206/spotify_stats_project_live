@@ -19,11 +19,6 @@ from django.conf import settings
 import logging
 import os
 
-SPOTIPY_CLIENT_ID = config('SPOTIPY_CLIENT_ID')
-SPOTIPY_CLIENT_SECRET = config('SPOTIPY_CLIENT_SECRET')
-SPOTIPY_REDIRECT_URI = config('SPOTIPY_REDIRECT_URI')
-
-
 
 LOGGING = {
     'version': 1,
