@@ -1,76 +1,86 @@
+h1 {
+  color: white;
+  font-size: 4vw; /* Responsive font size based on viewport width */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 2%; /* Responsive padding */
+  text-align: center; /* Center the heading */
+}
 
-  h1{
-    color: white;
-    font-size: 65px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    line-height: 30px;
-    padding-left: 35px;
-    margin:2%
-  }
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
 
+hr {
+  width: 80%;
+  margin: 2% auto; /* Center the horizontal rule */
+}
 
-  body{
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    
-  }
+main {
+  width: 90%;
+  margin: auto;
+  padding: 2%;
+}
 
-  hr{
-    width: 33%;
-    text-align: left;
-  }
+ol.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2%; /* Responsive gap */
+  list-style-type: none;
+  padding: 2%;
+  margin: 2% 0;
+}
 
-  main{
-    width: 80%;
-    margin: auto;
+ol.track-grid li {
+  border: 3px solid gray;
+  padding: 2%; /* Responsive padding */
+  text-align: center;
+  color: white;
+}
+
+ol.track-grid img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background-color: #1DB954;
+  color: white;
+  padding: 2% 4%; /* Responsive padding */
+  width: 100%; /* Make buttons full width */
+  border: none;
+  margin: 2% 0;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #1c8d43;
+  transition: 0.15s;
+}
+
+section.buttons {
+  background-color: #1DB954;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
+}
+
+/* Media Query for smaller screens (e.g., smartphones) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 6vw; /* Adjust font size for smaller screens */
   }
 
   ol.track-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr); 
-      gap: 50px;
-      column-gap: 100px;
-      list-style-type: none;
-      padding: 10px;
-      padding-bottom: 30px;
-      margin: 1%;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust grid for smaller screens */
   }
-
-  ol.track-grid li {
-      border: 3px solid gray;
-      padding: 5px;
-      text-align: center;
-      color: white;
-  }
-
-  ol.track-grid img {
-      
-      max-width: 170px;
-      height: 170px;
-  }
-
-  button{
-    background-color: #1DB954;
-    color: white;
-    padding: 25px;
-    width: 200px;
-    border: none;
-    margin-right: 20px;
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  button:hover{
-    background-color: #1c8d43;
-    transition: 0.15s;
-  }
-
-  section.buttons{
-    background-color: #1DB954;
-    padding-left: 35px;
-    display: flex;
-    position: sticky;
-    bottom: 0px;
-  }
+}
