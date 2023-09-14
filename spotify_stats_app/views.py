@@ -1,12 +1,9 @@
 
 from django.shortcuts import render, redirect
-from spotify_stats_project import settings
 from decouple import config
 from spotify_stats_project import settings
 from urllib.parse import urlencode
-from django.shortcuts import redirect
 from django.urls import reverse
-from django.http import HttpResponse
 
 
 def start_page_redirect(request):

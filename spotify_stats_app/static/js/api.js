@@ -1,4 +1,4 @@
-
+redirect_uri="https://spotify-stats-project.vercel.app/spotify-callback"
 
 function login() {
     const authorizationParams = {
