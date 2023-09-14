@@ -1,10 +1,11 @@
 
-const client_id = process.env.client_id;
-const client_secret = process.env.client_secret;
-const redirect_uri = process.env.redirect_uri;
 
 function login() {
-    
+    const client_id = process.env.client_id;
+    const client_secret = process.env.client_secret;
+    const redirect_uri = process.env.redirect_uri;
+
+
     const authorizationParams = {
       response_type: 'code',
       client_id: client_id,
@@ -21,6 +22,10 @@ function login() {
   
 
 async function auth() {
+
+    const client_id = process.env.client_id;
+    const client_secret = process.env.client_secret;
+    const redirect_uri = process.env.redirect_uri;
 
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
@@ -77,6 +82,9 @@ async function auth() {
 }
   
 async function refreshSpotifyToken() {
+    const client_id = process.env.client_id;
+    const client_secret = process.env.client_secret;
+    const redirect_uri = process.env.redirect_uri;
     
     const tokenUrl =  "https://accounts.spotify.com/api/token"
 
