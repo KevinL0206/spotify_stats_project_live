@@ -62,7 +62,7 @@ async function auth(client_id,client_secret,redirect_uri) {
 
   
         if (expires <= now) {
-            refreshSpotifyToken()
+            refreshSpotifyToken(client_id,client_secret)
         } 
       } else {    
         
@@ -73,7 +73,7 @@ async function auth(client_id,client_secret,redirect_uri) {
     }
 }
   
-async function refreshSpotifyToken() {
+async function refreshSpotifyToken(client_id,client_secret) {
     
     const tokenUrl =  "https://accounts.spotify.com/api/token"
 
