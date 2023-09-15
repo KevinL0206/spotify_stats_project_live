@@ -26,8 +26,8 @@
   <hr>
 
   <div class="center-container">
-    <img src="userpic.jpg" alt="User Profile Picture">
-    <p class="username">Username Here</p>
+    <img id= "profilepic" alt="User Profile Picture">
+    <p class="username">{{username}}</p>
   </div>
 
 
@@ -76,12 +76,15 @@
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token);
 
-    userinfo = await getUserInfo();
-    console.log("userinfo",userinfo)
-    username = userinfo.display_name;
-    userpic = userinfo.images[0].url;
+    username,userpic = userinfo()
 
-    
+    // Get the img element by its id
+    const imgElement = document.getElementById('profilepic');
+
+    // Set the src attribute dynamically
+    const imageUrl = userpic; // Replace with your image URL
+    imgElement.src = imageUrl;
+
     
 
 </script>
