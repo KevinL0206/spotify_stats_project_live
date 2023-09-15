@@ -18,20 +18,22 @@
   }
 
   .center-container {
-    width: 1000px; 
-    height: 1000px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 1000px;
+    height: 1000px;
     text-align: center;
     color: white;
     padding: 10px;
+    flex-wrap: wrap;
+    align-content: center;
+    top: 25%;
+    left: 30%;
+    position: absolute;
   }
 
   .center-container p {
     font-size: 30px;
     margin: 10px;
+    border: 10px;
   }
 
   #username {
@@ -42,7 +44,8 @@
 
   .center-container #userpic{
     transform: scale(1.5);
-    margin: 10px;
+    margin: 100px;
+    border: 15px;
   }
 
   hr{
