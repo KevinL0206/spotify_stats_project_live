@@ -5,7 +5,7 @@ function login(client_id,redirect_uri) {
     const authorizationParams = {
       response_type: 'code',
       client_id: client_id,
-      scope: 'user-top-read',
+      scope: 'user-top-read user-read-private',
       redirect_uri: redirect_uri
     };
     console.log(redirect_uri)
@@ -125,7 +125,37 @@ async function refreshSpotifyToken(client_id,client_secret) {
       return null;
     }
 }
+ 
+
+const getUserInfo = async () => {
+
+  access_token = localStorage.getItem('access_token');
+  console.log("access token", access_token) 
+
+  const url = new URL('https://api.spotify.com/v1/me');
+
   
+  const params = new URLSearchParams();
+  
+  const headers = {
+  'Authorization': `Bearer ${access_token}`
+
+  };
+
+
+  const response = await fetch(url,{
+      method:'GET',
+      headers: headers,
+      
+  });
+
+  console.log(response.status);
+
+
+  const data = await response.json();
+  console.log("data",data)
+  return data
+} 
 
 const getTopTracks = async (time_range,limit) => {
 

@@ -25,6 +25,11 @@
 
   <hr>
 
+  <div class="center-container">
+    <img src="userpic.jpg" alt="User Profile Picture">
+    <p class="username">Username Here</p>
+  </div>
+
 
 <section id="buttons" class="buttons"> 
 
@@ -60,9 +65,6 @@
             window.location.href = topArtistsUrl; // Redirect to the new URL
 
         });
-
-
-
     });
 
     const clientid = "{{client_id }}";
@@ -72,7 +74,13 @@
     auth(client_id=clientid,client_secret=clientsecret,redirect_uri=redirecturi)
 
     access_token = localStorage.getItem('access_token');
-    console.log("Access:",access_token)
+    console.log("Access:",access_token);
+
+    userinfo = getUserInfo();
+    username = userinfo.display_name;
+    userpic = userinfo.images[0].url;
+
+    
     
 
 </script>
