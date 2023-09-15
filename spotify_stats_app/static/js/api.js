@@ -175,7 +175,7 @@ async function userInfo(){
   console.log("username",username)
   userpic = userinfo.images[1].url;
   console.log("userpic",userpic)
-  return username,userpic
+  return [username, userpic]
 }
 
 const getTopTracks = async (time_range,limit) => {
