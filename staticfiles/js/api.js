@@ -133,9 +133,6 @@ const getUserInfo = async () => {
   console.log("access token", access_token) 
 
   const url = new URL('https://api.spotify.com/v1/me');
-
-  
-  const params = new URLSearchParams();
   
   const headers = {
   'Authorization': `Bearer ${access_token}`
