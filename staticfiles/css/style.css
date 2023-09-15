@@ -21,10 +21,11 @@
     width: 800px; 
     height: 800px; 
     display: flex;
-    justify-content: center; /* Horizontally center */
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
+    color: white;
     padding: 10px;
   }
 
