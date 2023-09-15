@@ -20,11 +20,12 @@
   .center-container {
     color: white;
     text-align: center;
-    padding: 60px;
+    padding: 80px;
   }
 
   .center-container p {
     font-size: 30px;
+    margin: 10px;
   }
 
   #username {
