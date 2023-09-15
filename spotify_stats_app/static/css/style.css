@@ -18,8 +18,8 @@
   }
 
   .center-container {
-    width: 800px; 
-    height: 800px; 
+    width: 1000px; 
+    height: 1000px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
