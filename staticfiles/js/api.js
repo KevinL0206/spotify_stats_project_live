@@ -126,32 +126,48 @@ async function refreshSpotifyToken(client_id,client_secret) {
     }
 }
  
-async function getUserInfo() {
-  console.log("get user info")
-  access_token = localStorage.getItem('access_token');
-  console.log("access token", access_token) 
+
+const getUserInfo = async (time_range,limit) => {
+  console.log("get user info");
+  // Retrieve the access token from localStorage
+  const access_token = localStorage.getItem('access_token');
+  console.log("access token", access_token);
+
+  if (!access_token) {
+      // Handle the case where the access token is missing
+      console.error("Access token is missing.");
+      return null; // or throw an error
+  }
 
   const url = new URL('https://api.spotify.com/v1/me');
-  
-  const headers = {
-  'Authorization': `Bearer ${access_token}`
 
+  const headers = {
+      'Authorization': `Bearer ${access_token}`
   };
 
-  const response = await fetch(url,{
-      method:'GET',
-      headers: headers,
-      
-  });
+  try {
+      const response = await fetch(url, {
+          method: 'GET',
+          headers: headers,
+      });
 
-  console.log("userinfo response",response.status);
+      console.log("userinfo response", response.status);
 
+      if (!response.ok) {
+          // Handle the case where the API request fails
+          console.error("Failed to fetch user info:", response.statusText);
+          return null; // or throw an error
+      }
 
-  const data = await response.json();
-  console.log("data",data)
-  return data
+      const data = await response.json();
+      console.log("data", data);
+      return data;
+  } catch (error) {
+      console.error("An error occurred:", error);
+      return null; // or throw an error
+  }
+}   
 
-}
 
 
 const getTopTracks = async (time_range,limit) => {
