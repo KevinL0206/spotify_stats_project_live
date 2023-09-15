@@ -27,10 +27,14 @@
     font-size: 30px;
   }
 
-  .username {
-    color: white;
-    margin-top: 10px;
+  #username {
+    
+    font-size: 35px;
     font-weight: bold;
+  }
+
+  .center-container #userpic{
+    transform: scale(1.5);
   }
 
   hr{
