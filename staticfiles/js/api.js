@@ -139,14 +139,13 @@ const getUserInfo = async () => {
 
   };
 
-
   const response = await fetch(url,{
       method:'GET',
       headers: headers,
       
   });
 
-  console.log(response.status);
+  console.log("userinfo response",response.status);
 
 
   const data = await response.json();
