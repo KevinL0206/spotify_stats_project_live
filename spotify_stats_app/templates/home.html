@@ -26,8 +26,8 @@
   <hr>
 
   <div class="center-container">
-    <img id= "profilepic" alt="User Profile Picture">
-    <p class="username">{{username}}</p>
+    <p>Welcome <span id="username"></span></p>
+    <img src="" alt="User Profile Picture" id="userpic"
   </div>
 
 
@@ -80,8 +80,17 @@
       
       username = data.display_name;
       console.log("username",username);
-      userpic = data.images[0].url;
+      userpic = data.images[1].url;
       console.log("userpic",userpic);
+
+      const usernameElement = document.getElementById('username');
+      const userpicElement = document.getElementById('userpic');
+
+      // Update the HTML elements with user information
+      usernameElement.textContent = userInfo.display_name;
+      userpicElement.src = userInfo.images[0].url;
+
+
     }
     
     userinfo()
