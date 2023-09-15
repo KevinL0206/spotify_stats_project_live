@@ -73,14 +73,18 @@
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token);
 
-    data =  getUserInfo();
-    console.log("userinfo",data);
+
+    async function userinfo(){
+      data =  await getUserInfo();
+      console.log("userinfo",data);
+      
+      username = data.display_name;
+      console.log("username",username);
+      userpic = data.images[0].url;
+      console.log("userpic",userpic);
+    }
     
-    username = data.display_name;
-    console.log("username",username);
-    userpic = data.images[0].url;
-    console.log("userpic",userpic);
-  
+    userinfo()
 
     // Get the img element by its id
     const imgElement = document.getElementById('profilepic');
