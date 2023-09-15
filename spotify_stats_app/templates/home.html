@@ -47,7 +47,7 @@
 <script>
 
   document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
-    
+
     const topArtistsButton = document.querySelector(".top-artists-button");
     const topTracksButton = document.querySelector(".top-tracks-button");
 
@@ -73,7 +73,7 @@
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token);
 
-    data = userinfo();
+    const data =  userinfo();
     console.log("userinfo",data)
     const username = data[0];
     const userpic = data[1];
