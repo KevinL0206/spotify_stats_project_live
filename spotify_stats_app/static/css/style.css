@@ -20,10 +20,12 @@
   .center-container {
     width: 800px; 
     height: 800px; 
-
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;
     color: white;
     text-align: center;
-    padding: 80px;
+    padding: 10px;
   }
 
   .center-container p {
