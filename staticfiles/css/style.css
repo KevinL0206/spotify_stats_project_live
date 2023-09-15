@@ -18,6 +18,9 @@
   }
 
   .center-container {
+    width: 400px; 
+    height: 200px; 
+    display: flex;
     color: white;
     text-align: center;
     padding: 80px;
