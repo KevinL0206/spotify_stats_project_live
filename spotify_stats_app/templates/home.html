@@ -76,7 +76,7 @@
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token);
 
-    userinfo = getUserInfo();
+    userinfo = await getUserInfo();
     console.log("userinfo",userinfo)
     username = userinfo.display_name;
     userpic = userinfo.images[0].url;
