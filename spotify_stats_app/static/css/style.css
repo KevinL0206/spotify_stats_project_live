@@ -20,13 +20,16 @@
   .center-container {
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 60px;
+  }
+
+  .center-container p {
+    font-size: 30px;
   }
 
   .username {
     color: white;
     margin-top: 10px;
-    font-size: 30px;
     font-weight: bold;
   }
 
