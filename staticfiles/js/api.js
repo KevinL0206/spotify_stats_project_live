@@ -169,8 +169,8 @@ const getUserInfo = async (time_range,limit) => {
 }   
 
 async function userinfo(){
-  userinfo = await getUserInfo();
-  console.log("userinfo",userinfo)
+  info = await getUserInfo();
+  console.log("userinfo",info)
   username = userinfo.display_name;
   userpic = userinfo.images[0].url;
   return username,userpic
