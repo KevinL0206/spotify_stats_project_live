@@ -76,6 +76,8 @@
     data =  getUserInfo();
     console.log("userinfo",data)
     
+    username = data.display_name;
+    userpic = data.images[1].url;
 
     // Get the img element by its id
     const imgElement = document.getElementById('profilepic');
