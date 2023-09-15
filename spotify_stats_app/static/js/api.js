@@ -128,7 +128,7 @@ async function refreshSpotifyToken(client_id,client_secret) {
  
 
 const getUserInfo = async () => {
-
+  console.log("get user info")
   access_token = localStorage.getItem('access_token');
   console.log("access token", access_token) 
 
