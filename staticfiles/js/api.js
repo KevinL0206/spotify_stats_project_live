@@ -168,15 +168,6 @@ const getUserInfo = async () => {
   }
 }   
 
-async function userInfo(){
-  info = await getUserInfo();
-  console.log("userinfo",info)
-  username = info.display_name;
-  console.log("username",username)
-  userpic = info.images[1].url;
-  console.log("userpic",userpic)
-  return [username, userpic]
-}
 
 const getTopTracks = async (time_range,limit) => {
 
