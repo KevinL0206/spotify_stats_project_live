@@ -126,8 +126,7 @@ async function refreshSpotifyToken(client_id,client_secret) {
     }
 }
  
-
-const getUserInfo = async () => {
+async function getUserInfo() {
   console.log("get user info")
   access_token = localStorage.getItem('access_token');
   console.log("access token", access_token) 
@@ -151,7 +150,9 @@ const getUserInfo = async () => {
   const data = await response.json();
   console.log("data",data)
   return data
-} 
+
+}
+
 
 const getTopTracks = async (time_range,limit) => {
 
