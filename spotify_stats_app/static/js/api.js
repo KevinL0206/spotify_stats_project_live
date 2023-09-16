@@ -19,6 +19,9 @@ function login(client_id,redirect_uri) {
 
 async function auth(client_id,client_secret,redirect_uri) {
 
+    localStorage.setItem('client_id', client_id);
+    localStorage.setItem('client_secret', client_secret);
+
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
 
@@ -89,42 +92,38 @@ async function refreshSpotifyToken(client_id,client_secret) {
       'refresh_token': refreshToken
     });
   
-    try {
-      const response = await fetch(tokenUrl, {
-        method: 'POST',
-        headers: headers,
-        body: data
-      });
-  
-      if (response.status === 200) {
-        responseData = await response.json();
-        access_token = responseData.access_token;
-        token_type = responseData.token_type;
-        scope = responseData.scope;
-        expires_in = responseData.expires_in;
-        newRefreshToken = responseData.refresh_token || refreshToken; // Refresh token may or may not be included
-  
-        const now = new Date();
-        const expires = new Date(now.getTime() + expires_in * 1000);
-  
-        // Update instance variables with new token data if needed
-  
-        localStorage.setItem('access_token', access_token);
-        localStorage.setItem('expires_in', expires_in);
-        localStorage.setItem('refresh_token', newRefreshToken);
-        localStorage.setItem('expires', expires);
-  
-      } else {
-        // Handle the error condition here
-        // You can return an error response or handle it as needed
-        return null;
-      }
-    } catch (error) {
-      // Handle network or other errors
-      console.error(error);
+   
+    const response = await fetch(tokenUrl, {
+      method: 'POST',
+      headers: headers,
+      body: data
+    });
+
+    if (response.status === 200) {
+      const responseData = await response.json(); 
+      const newaccess_token = responseData.access_token;
+
+      const expires_in = responseData.expires_in;
+      const newRefreshToken = responseData.refresh_token || refreshToken; // Refresh token may or may not be included
+
+      const now = new Date();
+      const expires = new Date(now.getTime() + expires_in * 1000);
+
+      // Update instance variables with new token data if needed
+
+      localStorage.setItem('access_token', newaccess_token);
+      localStorage.setItem('expires_in', expires_in);
+      localStorage.setItem('refresh_token', newRefreshToken);
+      localStorage.setItem('expires', expires);
+
+    } else {
+      // Handle the error condition here
+      // You can return an error response or handle it as needed
       return null;
     }
-}
+
+    } 
+
  
 
 const getUserInfo = async () => {
@@ -169,7 +168,21 @@ const getUserInfo = async () => {
 }   
 
 
+
 const getTopTracks = async (time_range,limit) => {
+
+    client_id = localStorage.getItem('client_id')
+    client_secret = localStorage.getItem('client_secret')
+
+    expires = localStorage.getItem('expires')
+    console.log("expires:",expires)
+    now = Date.now();
+    console.log("time",now)
+
+    if (expires <= now){
+      refreshSpotifyToken(client_id,client_secret)
+    }
+
 
     access_token = localStorage.getItem('access_token');
     console.log("access token", access_token) 
@@ -264,6 +277,16 @@ async function populateTopTracks(time_range,limit) {
 }
 
 const getTopArtists = async (time_range,limit) => {
+
+    client_id = localStorage.getItem('client_id')
+    client_secret = localStorage.getItem('client_secret')
+
+    expires = localStorage.getItem('expires')
+    now = Date.now();
+
+    if (expires <= now){
+      refreshSpotifyToken(client_id,client_secret)
+    }
 
     access_token = localStorage.getItem('access_token');
     console.log("access token", access_token) 
