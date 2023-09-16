@@ -74,7 +74,7 @@
 
     auth(client_id=clientid,client_secret=clientsecret,redirect_uri=redirecturi);
     // Reload the current page
-    window.location.reload();
+    
 
     access_token = localStorage.getItem('access_token');
     console.log("Access:",access_token);
@@ -95,7 +95,7 @@
       // Update the HTML elements with user information
       usernameElement.textContent = username;
       userpicElement.src = userpic;
-
+      window.location.reload();
 
     }
     
