@@ -57,6 +57,7 @@
   main{
     width: 80%;
     margin: auto;
+    margin-top: -30px;
   }
 
   ol.track-grid {
@@ -67,7 +68,7 @@
       list-style-type: none;
       padding: 10px;
       padding-bottom: 30px;
-      margin: 1%;
+      margin: 5%;
   }
 
   ol.track-grid li {
@@ -106,4 +107,109 @@
     display: flex;
     position: fixed;
     bottom: 0px;
+  }
+
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 24px; /* Adjust the font size as needed */
+      
+    }
+
+    body{
+      background-color: black;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      
+    }
+  
+    .center-container {
+      width: 80%;
+      height: auto;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      flex-wrap: wrap;
+      align-content: center;
+      top: 25%;
+      left: 30%;
+      position: absolute;
+    }
+  
+    .center-container p {
+      font-size: 30px;
+      margin: 10px;
+      border: 10px;
+    }
+  
+    #username {
+      
+      font-size: 35px;
+      font-weight: bold;
+    }
+  
+    .center-container #userpic{
+      transform: scale(1.5);
+      margin: 100px;
+      border: 15px;
+    }
+  
+    hr{
+      width: 33%;
+      text-align: left;
+    }
+  
+    main{
+      width: 80%;
+      margin: auto;
+      margin-top: -30px;
+    }
+  
+    ol.track-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 50px;
+        column-gap: 100px;
+        list-style-type: none;
+        padding: 10px;
+        padding-bottom: 30px;
+        margin: 5%;
+    }
+  
+    ol.track-grid li {
+        border: 3px solid gray;
+        padding: 5px;
+        text-align: center;
+        color: white;
+    }
+  
+    ol.track-grid img {
+        
+        max-width: 170px;
+        height: 170px;
+    }
+  
+    button{
+      background-color: #1DB954;
+      color: white;
+      padding: 25px;
+      width: 200px;
+      border: none;
+      margin-right: 20px;
+      font-size: 1em;
+      font-weight: 600;
+    }
+  
+    button:hover{
+      background-color: #1c8d43;
+      transition: 0.15s;
+    }
+  
+    section.buttons{
+      background-color: #1DB954;
+      width: 100%;
+      padding-left: 35px;
+      display: flex;
+      position: fixed;
+      bottom: 0px;
+    }
   }
