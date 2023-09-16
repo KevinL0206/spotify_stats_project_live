@@ -178,7 +178,7 @@ const getTopTracks = async (time_range,limit) => {
 
     if (access_token) {
       // Redirect to start.html
-      window.location.href = '/start';
+      window.location.href = '';
     }
 
     expires = localStorage.getItem('expires');
