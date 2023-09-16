@@ -176,7 +176,7 @@ const getTopTracks = async (time_range,limit) => {
     access_token = localStorage.getItem('access_token');
     console.log("access token", access_token) 
 
-    if (access_token) {
+    if (!access_token) {
       // Redirect to start.html
       window.location.href = '/start';
     }
