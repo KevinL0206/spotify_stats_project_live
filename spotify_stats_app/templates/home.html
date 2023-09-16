@@ -19,34 +19,6 @@
 
 <body>
 
-  <script>  
-  
-    async function userinfo(){
-
-        
-      data =  await getUserInfo();
-      console.log("userinfo",data);
-
-      username = data.display_name;
-      console.log("username",username);
-      userpic = data.images[1].url;
-      console.log("userpic",userpic);
-
-      const usernameElement = document.getElementById('username');
-      const userpicElement = document.getElementById('userpic');
-
-      // Update the HTML elements with user information
-      usernameElement.textContent = username;
-      userpicElement.src = userpic;
-
-
-
-    }
-
-    userinfo()
-    
-  </script>
-
   <h1>Home Page</h1>
   
   <main>
@@ -95,21 +67,40 @@
 
     });
   
-
-    const clientid = "{{client_id }}";
-    const clientsecret = "{{client_secret }}";
-    const redirecturi = "{{redirect_uri}}";
-
-    auth(client_id=clientid,client_secret=clientsecret,redirect_uri=redirecturi);
-    // Reload the current page
-    
-
-    access_token = localStorage.getItem('access_token');
-    console.log("Access:",access_token);
-
-
   });
 
+  const clientid = "{{client_id }}";
+  const clientsecret = "{{client_secret }}";
+  const redirecturi = "{{redirect_uri}}";
+
+  auth(client_id=clientid,client_secret=clientsecret,redirect_uri=redirecturi);
   
+
+  access_token = localStorage.getItem('access_token');
+  console.log("Access:",access_token);
+
+  async function userinfo(){
+
+      
+  data =  await getUserInfo();
+  console.log("userinfo",data);
+
+  username = data.display_name;
+  console.log("username",username);
+  userpic = data.images[1].url;
+  console.log("userpic",userpic);
+
+  const usernameElement = document.getElementById('username');
+  const userpicElement = document.getElementById('userpic');
+
+  // Update the HTML elements with user information
+  usernameElement.textContent = username;
+  userpicElement.src = userpic;
+
+
+
+  }
+
+  userinfo()
 
 </script>
