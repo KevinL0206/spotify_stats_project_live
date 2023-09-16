@@ -171,17 +171,17 @@ const getUserInfo = async () => {
 
 const getTopTracks = async (time_range,limit) => {
 
-    client_id = localStorage.getItem('client_id')
-    client_secret = localStorage.getItem('client_secret')
+    client_id = localStorage.getItem('client_id');
+    client_secret = localStorage.getItem('client_secret');
 
-    expires = localStorage.getItem('expires')
-    expires_milli = expires.getTime
+    expires = localStorage.getItem('expires');
+    expires_milli = new Date(expires).getTime();
     console.log("expires:",expires_milli)
     now = Date.now();
     console.log("time",now)
 
     if (expires_milli <= now){
-      refreshSpotifyToken(client_id,client_secret)
+      refreshSpotifyToken(client_id,client_secret);
     }
 
 
