@@ -173,6 +173,13 @@ const getTopTracks = async (time_range,limit) => {
 
     client_id = localStorage.getItem('client_id');
     client_secret = localStorage.getItem('client_secret');
+    access_token = localStorage.getItem('access_token');
+    console.log("access token", access_token) 
+
+    if (access_token) {
+      // Redirect to start.html
+      window.location.href = '/start';
+    }
 
     expires = localStorage.getItem('expires');
     expires_milli = new Date(expires).getTime();
@@ -185,8 +192,7 @@ const getTopTracks = async (time_range,limit) => {
     }
 
 
-    access_token = localStorage.getItem('access_token');
-    console.log("access token", access_token) 
+    
 
     const url = new URL('https://api.spotify.com/v1/me/top/tracks');
 
@@ -279,18 +285,27 @@ async function populateTopTracks(time_range,limit) {
 
 const getTopArtists = async (time_range,limit) => {
 
-    client_id = localStorage.getItem('client_id')
-    client_secret = localStorage.getItem('client_secret')
-
-    expires = localStorage.getItem('expires')
-    now = Date.now();
-
-    if (expires <= now){
-      refreshSpotifyToken(client_id,client_secret)
-    }
-
+    client_id = localStorage.getItem('client_id');
+    client_secret = localStorage.getItem('client_secret');
     access_token = localStorage.getItem('access_token');
     console.log("access token", access_token) 
+
+    if (!access_token) {
+      // Redirect to start.html
+      window.location.href = '/start';
+    }
+
+    expires = localStorage.getItem('expires');
+    expires_milli = new Date(expires).getTime();
+    console.log("expires:",expires_milli)
+    now = Date.now();
+    console.log("time",now)
+
+    if (expires_milli <= now){
+      refreshSpotifyToken(client_id,client_secret);
+    }
+
+    
 
     const url = new URL('https://api.spotify.com/v1/me/top/artists');
 
