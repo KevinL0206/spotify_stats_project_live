@@ -24,6 +24,7 @@ urlpatterns = [
     
     path('', views.start_page_redirect, name='start-page'),
     path('fail/', views.fail_view, name='fail'),
+    path('start/',views.start_page_redirect, name='start'),
 
     path("spotify-callback/", views.spotify_callback, name="spotify-callback"),
 
