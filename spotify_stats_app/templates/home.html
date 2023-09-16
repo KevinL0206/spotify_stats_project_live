@@ -82,7 +82,7 @@
 
     async function userinfo(){
 
-      let reloadPage = true;
+      
       data =  await getUserInfo();
       console.log("userinfo",data);
       
@@ -98,10 +98,7 @@
       usernameElement.textContent = username;
       userpicElement.src = userpic;
       
-      if (reloadPage) {
-        window.location.reload();
-        reloadPage = false; // Prevent further reloading
-      }
+      
 
     }
     
