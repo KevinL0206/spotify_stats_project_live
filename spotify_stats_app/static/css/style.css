@@ -124,10 +124,14 @@
     }
   
     .center-container {
-      
       color: white;
+      width: 100vh;
       padding: 10px;
-      
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      justify-content: center;
+      align-items: center;
     }
   
     .center-container p {
