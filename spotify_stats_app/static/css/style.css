@@ -149,13 +149,13 @@
     }
   
     .center-container #userpic{
-      
+      transform: scale(0.65);
       margin: 100px;
       border: 15px;
     }
   
     hr{
-      width: 40%;
+      width: 100%;
       text-align: left;
     }
   
