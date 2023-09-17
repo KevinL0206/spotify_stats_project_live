@@ -109,7 +109,7 @@
     bottom: 0px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     h1 {
       font-size: 30px;
       padding: 10px;
@@ -149,7 +149,7 @@
     }
   
     .center-container #userpic{
-      transform: scale(1.5);
+      
       margin: 100px;
       border: 15px;
     }
