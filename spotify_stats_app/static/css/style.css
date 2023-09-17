@@ -110,41 +110,49 @@
   }
 
   @media (max-width: 1000px) {
-    body {
+    h1 {
+      font-size: 30px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    body{
       background-color: black;
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
+      width: 100vh;
+    }
+  
+    .center-container {
+      color: white;
+      width: 100vh;
+      padding: 10px;
       display: flex;
+      flex-direction: column;
+      align-content: flex-start;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
     }
-
-    h1 {
-        font-size: 30px;
-        padding: 10px;
-        text-align: center;
-        color: white;
-    }
-
-    .center-container {
-        color: white;
-        text-align: center;
-    }
-
+  
     .center-container p {
-        font-size: 30px;
-        margin: 10px;
+      font-size: 30px;
+      margin: 10px;
+      border: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
-
+  
     #username {
-        font-size: 35px;
-        font-weight: bold;
+      
+      font-size: 35px;
+      font-weight: bold;
     }
-
-    .center-container #userpic {
-        transform: scale(0.75);
+  
+    .center-container #userpic{
+      transform: scale(0.75);
+      
+      border: 15px;
     }
   
     hr{
