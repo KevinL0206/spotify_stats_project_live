@@ -111,16 +111,16 @@
 
   @media (max-width: 800px) {
     h1 {
-      font-size: 40px; /* Adjust the font size as needed */
-      padding: 20px;
-      padding-bottom: 50px;
+      font-size: 30px;
+      padding: 10px;
+      text-align: center;
     }
 
     body{
       background-color: black;
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
-      
+      width: 100vh;
     }
   
     .center-container {
@@ -160,18 +160,16 @@
     }
   
     main{
-      width: 100%;
-      margin: auto;
-      margin-top: 65px;
       height: auto;
+      margin-bottom: 100px;
       
     }
   
     ol.track-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr); 
-        gap: 70px;
-        column-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        column-gap: 30px;
         list-style-type: none;
         padding: 10px;
         padding-bottom: 10px;
@@ -179,19 +177,18 @@
     }
   
     ol.track-grid li {
-        font-size: 0.8em;
+        font-size: 1em;
         display: inline-block;
         border: 3px solid gray;
-        padding: 5px;
+        padding: 1px;
         text-align: center;
-        box-sizing: border-box;
         color: white;
     }
   
     ol.track-grid img {
         
         max-width: 100%;
-        height: 100%;
+      
     }
   
     button{
