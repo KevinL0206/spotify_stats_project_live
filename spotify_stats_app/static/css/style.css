@@ -124,22 +124,19 @@
     }
   
     .center-container {
-      width: 80%;
-      height: auto;
-      text-align: center;
+      
       color: white;
       padding: 10px;
-      flex-wrap: wrap;
-      align-content: center;
-      top: 25%;
-      left: 30%;
-      position: absolute;
+      
     }
   
     .center-container p {
       font-size: 30px;
       margin: 10px;
       border: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
   
     #username {
@@ -149,8 +146,8 @@
     }
   
     .center-container #userpic{
-      transform: scale(0.65);
-      margin: 100px;
+      transform: scale(0.75);
+      
       border: 15px;
     }
   
