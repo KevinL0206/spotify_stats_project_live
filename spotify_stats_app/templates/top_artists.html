@@ -69,6 +69,29 @@
 <!-- Button Clicks -->
 <script>
 
+async function userinfo(){
+
+      
+  data =  await getUserInfo();
+  console.log("userinfo",data);
+
+  username = data.display_name;
+  console.log("username",username);
+  userpic = data.images[1].url;
+  console.log("userpic",userpic);
+
+  const usernameElement = document.getElementById('username');
+  const userpicElement = document.getElementById('userpic');
+
+  // Update the HTML elements with user information
+  usernameElement.textContent = username;
+  userpicElement.src = userpic;
+
+
+
+
+}
+
 function handleTimeClick(event) {
   const buttonId = event.target.id;
 
@@ -79,7 +102,7 @@ function handleTimeClick(event) {
     long_term: "long_term",
   };
 
-  
+
   // Get the corresponding time_range from the map
   const timeRange = timeRangeMap[buttonId];
   limit = localStorage.getItem('limit');
@@ -133,4 +156,6 @@ document.addEventListener("DOMContentLoaded", () => { // wait for page to be loa
   
 
 });
+
+userinfo()
 </script>
