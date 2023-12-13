@@ -255,7 +255,7 @@ async function populateTopTracks(time_range,limit) {
         // Get the corresponding time_range from the map
         const timeRange = timeRangeMap[time_range];    
 
-        h1Element.textContent = 'Your Top ' + limit + ' Tracks - ' + timeRange;
+        //h1Element.textContent = 'Your Top ' + limit + ' Tracks - ' + timeRange;
 
 
         // Loop through the top_tracks data and create list items for each item
@@ -366,7 +366,7 @@ async function populateTopArtists(time_range,limit) {
         // Get the corresponding time_range from the map
         const timeRange = timeRangeMap[time_range];    
 
-        h1Element.textContent = 'Your Top ' + limit + ' Artists - ' + timeRange;
+        //h1Element.textContent = 'Your Top ' + limit + ' Artists - ' + timeRange;
 
         // Loop through the top_Artists data and create list items for each item
         topArtists.items.forEach((item) => {

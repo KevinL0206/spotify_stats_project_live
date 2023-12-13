@@ -22,17 +22,18 @@
 
   <!-- Display the selected time frame -->
   <nav class="flex items-center justify-between p-4 bg-[#333333]">
-    <h1 class="text-2xl font-bold">Artists</h1>
-    <div class="flex items-center">
-      <img
-        src="/placeholder.svg"
-        alt="User Avatar"
-        class="rounded-full"
-        width="24"
-        height="24"
-        style="aspect-ratio: 24 / 24; object-fit: cover;"
-      />
-    </div>
+      <h1 class="text-2xl font-bold">Artists</h1>
+      <div class="flex items-center">
+          <img
+              src=""
+              alt="User Profile Picture" 
+              id="userpic"
+              class="rounded-full"
+              width="24"
+              height="24"
+              style="aspect-ratio: 24 / 24; object-fit: cover;"
+          />
+      </div>
   </nav>
 
   <main>
@@ -78,6 +79,7 @@ function handleTimeClick(event) {
     long_term: "long_term",
   };
 
+  
   // Get the corresponding time_range from the map
   const timeRange = timeRangeMap[buttonId];
   limit = localStorage.getItem('limit');
