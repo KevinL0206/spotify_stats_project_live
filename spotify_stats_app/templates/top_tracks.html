@@ -24,16 +24,17 @@
   <nav class="flex items-center justify-between p-4 bg-[#333333]">
     <h1 class="text-2xl font-bold">Artists</h1>
     <div class="flex items-center">
-      <img
-        src="/placeholder.svg"
-        alt="User Avatar"
-        class="rounded-full"
-        width="24"
-        height="24"
-        style="aspect-ratio: 24 / 24; object-fit: cover;"
-      />
+        <img
+            src=""
+            alt="User Profile Picture" 
+            id="userpic"
+            class="rounded-full"
+            width="24"
+            height="24"
+            style="aspect-ratio: 24 / 24; object-fit: cover;"
+        />
     </div>
-  </nav>
+</nav>
 
   <hr>
 
@@ -70,6 +71,28 @@
 <!-- Button Clicks -->
 <script>
 
+async function userinfo(){
+
+      
+data =  await getUserInfo();
+console.log("userinfo",data);
+
+username = data.display_name;
+console.log("username",username);
+userpic = data.images[1].url;
+console.log("userpic",userpic);
+
+const usernameElement = document.getElementById('username');
+const userpicElement = document.getElementById('userpic');
+
+// Update the HTML elements with user information
+usernameElement.textContent = username;
+userpicElement.src = userpic;
+
+
+
+}
+
 function handleTimeClick(event) {
   const buttonId = event.target.id;
 
@@ -104,8 +127,6 @@ function handleLimitClick(event) {
   // Call the populateTopTracks function with the updated time_range
   populateTopTracks(time_range=time_range,limit=Limit);
 }
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => { // wait for page to be loaded
