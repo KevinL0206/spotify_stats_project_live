@@ -70,16 +70,13 @@ async function userinfo(){
 data =  await getUserInfo();
 console.log("userinfo",data);
 
-username = data.display_name;
-console.log("username",username);
+
 userpic = data.images[1].url;
 console.log("userpic",userpic);
-
-const usernameElement = document.getElementById('username');
 const userpicElement = document.getElementById('userpic');
 
 // Update the HTML elements with user information
-usernameElement.textContent = username;
+
 userpicElement.src = userpic;
 
 
