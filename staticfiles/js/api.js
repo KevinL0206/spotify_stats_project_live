@@ -348,7 +348,7 @@ async function populateTopArtists(time_range,limit) {
     localStorage.setItem('limit', limit);
     
     try {
-        const topArtists = await getTopArtists(time_range,limit); // Call your function to get top Artists
+        const topArtists = await getTopArtists(time_range,limit); // Call function to get top Artists
 
         const olElement = document.querySelector('.track-grid'); // Get the <ol> element
         
