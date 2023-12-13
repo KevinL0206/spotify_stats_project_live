@@ -43,16 +43,11 @@ body{
 }
 
 .center-container {
-  width: 1000px;
-  height: 800px;
+
   text-align: center;
   color: white;
-  padding: 10px;
-  flex-wrap: wrap;
-  align-content: center;
-  top: 25%;
-  left: 30%;
-  position: absolute;
+  padding: 7em;
+ 
 }
 
 .center-container p {
